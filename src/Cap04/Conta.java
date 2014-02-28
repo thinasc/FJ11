@@ -2,33 +2,25 @@ package Cap04;
 
 public class Conta {
 	int numero;
-	double saldo;
-	double limite;
+	public double saldo;
+	public double limite;
 	Cliente titular;
 
-	boolean saca (double valor) {
-		if (this.saldo < valor) {
-			return false;
-		}
-		else {
-			this.saldo = this.saldo - valor;
-			return true;
-		}
+	public double getSaldo() {
+		return this.saldo;
 	}
 
-	void deposita (double quantidade) {
-		this.saldo += quantidade;
+	public void saca (double valor) {
+		this.saldo -= valor;
 	}
 
-	boolean transfere (Conta destino, double valor) {
-		boolean retirou = this.saca(valor);
-		if (retirou == false) {
-			return false;
-		}
-		else {
-			destino.deposita(valor);
-			return true;
-		}
+	void deposita (double valor) {
+		this.saldo += valor;
+	}
+
+	void transfere (Conta destino, double valor) {
+		this.saca(valor);
+		destino.deposita(valor);
 	}
 
 }

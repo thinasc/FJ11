@@ -9,9 +9,9 @@ public class Programa {
 		minhaConta.titular = c;
 
 		minhaConta.titular.nome = "Duke";
-		minhaConta.saldo = 1000.0;
+		minhaConta.deposita(1000);
 		
-		System.out.println("Saldo Inicial: " + minhaConta.saldo);
+		System.out.println("Saldo Inicial: " + minhaConta.getSaldo());
 	}
 
 }
